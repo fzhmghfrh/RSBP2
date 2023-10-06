@@ -2,11 +2,9 @@ var daikon = require('daikon');
 var fs = require('fs');
 
 var series = new daikon.Series();
-// var files = fs.readdirSync('C:/Users/HP/Downloads/Daikon-master/Daikon-master/tests/data/volume/');
-var files = fs.readdirSync('C:/Users/HP/Documents/kuliah/SEMESTER 5/RSBP/Asistensi/Tugas 1/Phantoms/Manekin-01/A/');
-// var files = fs.readdirSync('C:/Users/HP/Documents/kuliah/SEMESTER 5/RSBP/Asistensi/Tugas 1/2_skull_ct/DICOM/');
-// var files = fs.readdirSync('./DICOM/');
-// var files = fs.readdirSync('./data/volume/');
+// var files = fs.readdirSync('./dicoms/data/volume/');
+var files = fs.readdirSync('./dicoms/Phantoms/Manekin-01/A/');
+// var files = fs.readdirSync('./dicoms/2_skull_ct/DICOM/');
 
 function toArrayBuffer(buffer) {
     var arrayBuffer = new ArrayBuffer(buffer.length);
@@ -35,14 +33,10 @@ function applyWWWC(
     return appliedArray;
 }
 
-// terserah
-
 for (var ctr in files) {
-    // var name = 'C:/Users/HP/Downloads/Daikon-master/Daikon-master/tests/data/volume/' + files[ctr];
-    var name = 'C:/Users/HP/Documents/kuliah/SEMESTER 5/RSBP/Asistensi/Tugas 1/Phantoms/Manekin-01/A/' + files[ctr];
-    // var name = 'C:/Users/HP/Documents/kuliah/SEMESTER 5/RSBP/Asistensi/Tugas 1/2_skull_ct/DICOM/' + files[ctr];
-    // var name = './DICOM/' + files[ctr];
-    // var name = 'data/volume/' + files[ctr];
+    // var name = 'dicoms/data/volume/' + files[ctr];
+    var name = 'dicoms/Phantoms/Manekin-01/A/' + files[ctr];
+    // var name = 'dicoms/dicoms/2_skull_ct/DICOM/' + files[ctr];
     var buf = fs.readFileSync(name);
     
     var image = daikon.Series.parseImage(new DataView(toArrayBuffer(buf)));
