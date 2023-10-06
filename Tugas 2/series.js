@@ -35,6 +35,8 @@ function applyWWWC(
     return appliedArray;
 }
 
+// terserah
+
 for (var ctr in files) {
     // var name = 'C:/Users/HP/Downloads/Daikon-master/Daikon-master/tests/data/volume/' + files[ctr];
     var name = 'C:/Users/HP/Documents/kuliah/SEMESTER 5/RSBP/Asistensi/Tugas 1/Phantoms/Manekin-01/A/' + files[ctr];
