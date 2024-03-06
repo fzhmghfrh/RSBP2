@@ -1,3 +1,12 @@
+import subprocess
+
+# List of required libraries
+required_libraries = ['pandas', 'matplotlib', 'seaborn', 'streamlit', 'babel']
+
+# Install required libraries
+for library in required_libraries:
+    subprocess.check_call(['pip', 'install', library])
+
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
